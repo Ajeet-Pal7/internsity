@@ -35,6 +35,14 @@ app.get('/', async (req, res) => {
             );
 });
 
+app.get('/pages/about', async (req, res) => {
+    await otherUtils.sendFileWithFallback(
+                res,
+                path.join(__dirname, '../public', 'abiut.html'),
+                path.join(__dirname, '../public', 'error-404.html')
+            );
+});
+
 // Import Routes
 app.use('/auth', require('./routes/authRoutes'));
 app.use('/profile', require('./routes/profileRoutes'));
