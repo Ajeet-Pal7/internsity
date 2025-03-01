@@ -16,7 +16,7 @@ connectDB();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('public'));
 app.use(express.json());
-app.use(cors({ origin: "192.168.132.5:3000", methods: "GET,POST,PUT,DELETE" }));
+app.use(cors({ origin: "*", methods: "GET,POST,PUT,DELETE" }));
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
