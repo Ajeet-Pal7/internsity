@@ -42,11 +42,12 @@ app.get("/test", (req, res) => {
 
 app.get('/pages/about', async (req, res) => {
     console.log("Function Working");
-    await otherUtils.sendFileWithFallback(
-                res,
-                path.join(__dirname, '../public', 'abiut-us.html'),
-                path.join(__dirname, '../public', 'error-404.html')
-            );
+    res.send("hello");
+    // await otherUtils.sendFileWithFallback(
+    //             res,
+    //             path.join(__dirname, '../public', 'abiut-us.html'),
+    //             path.join(__dirname, '../public', 'error-404.html')
+    //         );
 });
 
 // Import Routes
