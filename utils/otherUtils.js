@@ -5,7 +5,9 @@ exports.randomNumber = (min, max) => { return Math.floor(Math.random() * (max - 
 exports.sendFileWithFallback = async (res, filePath, fallbackFile) => {
     res.sendFile(filePath, (err) => {
         if (err) {
-            res.sendFile(fallbackFile);
+            res.sendFile(fallbackFile, (err) => {
+                res.send(`Sorry ${filePath} or ${fallbackFile} not found`);
+            });
         }
     });
 
