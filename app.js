@@ -27,7 +27,7 @@ app.use(session({
     cookie: { secure: false, httpOnly: true, maxAge: 30 * 60 * 1000 }
 }));
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     await otherUtils.sendFileWithFallback(
                 res,
                 path.join(__dirname, '../public', 'index.html'),
@@ -52,6 +52,6 @@ app.use((req, res) => {
 const PORT = process.env.PORT;
 // app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
 app.listen(process.env.PORT || 3000, "0.0.0.0", () => {
-    console.log("Server is running...");
+    console.log(`Server is running on PORT : ${PORT}`);
 });
 
