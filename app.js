@@ -11,7 +11,7 @@ const connectDB = require('./config/database');
 const app = express();
 
 // Connect to database
-// connectDB();
+connectDB();
 
 // Middleware setup
 app.use(express.static(path.join(__dirname, 'public')));
