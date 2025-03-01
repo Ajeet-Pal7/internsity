@@ -45,7 +45,7 @@ app.get('/pages/about', async (req, res) => {
     console.log("Function Working");
     await otherUtils.sendFileWithFallback(
                 res,
-                path.join(__dirname, '../public', 'about-us.html'),
+                path.join(__dirname, '../', 'about-us.html'),
                 path.join(__dirname, '../public', 'error-404.html')
             );
 });
