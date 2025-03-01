@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const otherUtils = require('../utils/otherUtils');
 // const path = require('path');
 // const cors = require('cors');
 // const session = require('express-session');
@@ -9,6 +10,7 @@ const express = require('express');
 // Initialize app
 const app = express();
 app.get("/test", (req, res) => {
+    console.log("REQ Received");
     res.send("API is working!");
 });
 
@@ -38,14 +40,14 @@ app.get("/test", (req, res) => {
 //             );
 // });
 
-// app.get('/pages/about', async (req, res) => {
-//     console.log("Function Working");
-//     await otherUtils.sendFileWithFallback(
-//                 res,
-//                 path.join(__dirname, '../public', 'abiut-us.html'),
-//                 path.join(__dirname, '../public', 'error-404.html')
-//             );
-// });
+app.get('/pages/about', async (req, res) => {
+    console.log("Function Working");
+    await otherUtils.sendFileWithFallback(
+                res,
+                path.join(__dirname, '../public', 'abiut-us.html'),
+                path.join(__dirname, '../public', 'error-404.html')
+            );
+});
 
 // Import Routes
 // app.use('/auth', require('./routes/authRoutes'));
