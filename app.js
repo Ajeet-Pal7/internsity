@@ -36,6 +36,7 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/pages/about', async (req, res) => {
+    console.log("Function Working");
     await otherUtils.sendFileWithFallback(
                 res,
                 path.join(__dirname, '../public', 'abiut-us.html'),
@@ -46,7 +47,7 @@ app.get('/pages/about', async (req, res) => {
 // Import Routes
 app.use('/auth', require('./routes/authRoutes'));
 app.use('/profile', require('./routes/profileRoutes'));
-app.use('/pages', require('./routes/pageRoutes'));
+// app.use('/pages', require('./routes/pageRoutes'));
 app.use('/internships', require('./routes/internshipRoutes'));
 app.use('/portfolio', require('./routes/portfolioRoutes'));
 app.use('/admins', require('./routes/adminRoutes'));
