@@ -20,12 +20,12 @@ app.use(cors({ origin: "https://internsity-production.up.railway.app", methods: 
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(session({
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false, httpOnly: true, maxAge: 30 * 60 * 1000 }
-}));
+// app.use(session({
+//     secret: process.env.SECRET,
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: { secure: false, httpOnly: true, maxAge: 30 * 60 * 1000 }
+// }));
 
 app.get('/', async (req, res) => {
     await otherUtils.sendFileWithFallback(
