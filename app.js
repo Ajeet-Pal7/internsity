@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const otherUtils = require('../utils/otherUtils.js');
+const otherUtils = require('./utils/otherUtils.js');
 // const path = require('path');
 // const cors = require('cors');
 // const session = require('express-session');
