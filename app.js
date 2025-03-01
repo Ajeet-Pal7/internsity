@@ -18,9 +18,9 @@ app.get("/test", (req, res) => {
 // connectDB();
 
 // Middleware setup
-// app.use(express.static(path.join(__dirname, 'public')));
-// app.use(express.static('public'));
-// app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
+app.use(express.json());
 // app.use(cors({ origin: "https://internsity-production.up.railway.app", methods: "GET,POST,PUT,DELETE" }));
 // app.use(express.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
