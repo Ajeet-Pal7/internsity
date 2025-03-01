@@ -20,7 +20,6 @@ app.get("/test", (req, res) => {
 // Middleware setup
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static('public'));
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 // app.use(cors({ origin: "https://internsity-production.up.railway.app", methods: "GET,POST,PUT,DELETE" }));
 // app.use(express.urlencoded({ extended: false }));
@@ -45,7 +44,7 @@ app.get('/pages/about', async (req, res) => {
     console.log("Function Working");
     await otherUtils.sendFileWithFallback(
                 res,
-                path.join(__dirname, '../', 'about-us.html'),
+                path.join(__dirname, '../../', 'about-us.html'),
                 path.join(__dirname, '../public', 'error-404.html')
             );
 });
