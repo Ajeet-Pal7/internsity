@@ -3,7 +3,7 @@ const {User} = require('../models/User');
 
 
 // establishing connection with database
-const uri = 'mongodb://127.0.0.1:27017/internsity';
+const uri = process.env.MONGO_URI;
 const connectDB = async () => {
     try {
         await mongoose.connect(uri, {
