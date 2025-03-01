@@ -6,7 +6,7 @@ const otherUtils = require('../utils/otherUtils')
 
 // Exported route handlers
 exports.about = async (req, res) => {
-    otherUtils.sendFileWithFallback(
+    await otherUtils.sendFileWithFallback(
         res,
         path.join(__dirname, '../public', 'about-us.html'),
         path.join(__dirname, '../public', 'error-404.html')
