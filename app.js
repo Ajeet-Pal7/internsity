@@ -44,8 +44,12 @@ app.use('/portfolio', require('./routes/portfolioRoutes'));
 app.use('/admins', require('./routes/adminRoutes'));
 
 // 404 Fallback
-app.use((req, res) => {
-    res.status(404).sendFile(path.join(__dirname, 'public', 'error-404.html'));
+app.use(async (req, res) => {
+    await otherUtils.sendFileWithFallback(
+                res,
+                path.join(__dirname, '../public', 'error-404.html'),
+                path.join(__dirname, '../public', 'error-404.html')
+            );
 });
 
 // Start server
