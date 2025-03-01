@@ -27,6 +27,10 @@ app.use(session({
     cookie: { secure: false, httpOnly: true, maxAge: 30 * 60 * 1000 }
 }));
 
+app.get('/', (req, res) => {
+    res.sendFile();
+});
+
 // Import Routes
 app.use('/auth', require('./routes/authRoutes'));
 app.use('/profile', require('./routes/profileRoutes'));
