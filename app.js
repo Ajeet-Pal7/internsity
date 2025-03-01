@@ -28,7 +28,11 @@ app.use(session({
 }));
 
 app.get('/', (req, res) => {
-    res.sendFile();
+    await otherUtils.sendFileWithFallback(
+                res,
+                path.join(__dirname, '../public', 'index.html'),
+                path.join(__dirname, '../public', 'error-404.html')
+            );
 });
 
 // Import Routes
