@@ -394,7 +394,8 @@ async function updateAchievementsAndAwards() {
         alert("Can not update the same details");
         return
     }
-    const response = await fetch(https://internsity-production.up.railway.app/profile/updateAchievementsAndAwards', {
+    
+    const response = await fetch('https://internsity-production.up.railway.app/profile/updateAchievementsAndAwards', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
