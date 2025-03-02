@@ -89,7 +89,7 @@ async function register() {
 
     try {
         // Sending data to the server
-        const response = await fetch("http://localhost:3000/auth/register", {
+        const response = await fetch("https://internsity-production.up.railway.app/auth/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
