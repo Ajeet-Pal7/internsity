@@ -21,13 +21,13 @@ async function getData() {
     const data = await response.json();
     if (!data) {
         alert("Session expired please login...")
-        window.location.href = 'login'
+        window.location.href = '/auth/login'
     }
     return data;
 }
-function setData() {
+async function setData() {
     console.log("Now funtion working");
-    const data = getData();
+    const data = await getData();
     if (data) {
         // personalInfo
         if (data.personalInfo.fullName) document.getElementById('fullName').value = data.personalInfo.fullName;
