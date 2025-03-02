@@ -1,10 +1,10 @@
-
-async function getData() {
+function getData() {
+    console.log("Now funtion working");
     const user = localStorage.getItem('user');
     if (!user) {
         window.location.href = '/auth/login'
     }
-    const response = await fetch("https://internsity-production.up.railway.app/profile/getProfile", {
+    const response = fetch("https://internsity-production.up.railway.app/profile/getProfile", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
