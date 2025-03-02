@@ -104,7 +104,7 @@ function setData() {
 async function getProfilePicture(id) {
     try {
         const userId = { "id": id }
-        const response = await fetch('https://internsity-production.up.railway.app/profile/getProfilePicture', {
+        const response = await fetch("https://internsity-production.up.railway.app/profile/getProfilePicture", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -159,7 +159,7 @@ async function updatePersonalInfo() {
         alert("All the information in this section are required");
         return
     }
-    const response = await fetch('https://internsity-production.up.railway.app/profile/updatePersonalInfo', {
+    const response = await fetch("https://internsity-production.up.railway.app/profile/updatePersonalInfo", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -197,7 +197,7 @@ async function updateMatriculationDetails() {
         alert("Please type correct details!");
         return
     }
-    const response = await fetch('https://internsity-production.up.railway.app/profile/updateMatriculationDetails', {
+    const response = await fetch("https://internsity-production.up.railway.app/profile/updateMatriculationDetails", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -276,7 +276,7 @@ async function updateGraduationDetails() {
         alert("Please type correct details!");
         return
     }
-    const response = await fetch('https://internsity-production.up.railway.app/profile/updateGraduationDetails', {
+    const response = await fetch("https://internsity-production.up.railway.app/profile/updateGraduationDetails", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -337,7 +337,7 @@ async function updateSkills() {
         alert("Can not update the same details");
         return
     }
-    const response = await fetch('https://internsity-production.up.railway.app/profile/updateSkills', {
+    const response = await fetch("https://internsity-production.up.railway.app/profile/updateSkills", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -365,7 +365,7 @@ async function updateHobbiesAndInterests() {
         alert("Can not update the same details");
         return
     }
-    const response = await fetch('https://internsity-production.up.railway.app/profile/updateHobbiesAndInterests', {
+    const response = await fetch("https://internsity-production.up.railway.app/profile/updateHobbiesAndInterests", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -395,7 +395,7 @@ async function updateAchievementsAndAwards() {
         return
     }
     
-    const response = await fetch('https://internsity-production.up.railway.app/profile/updateAchievementsAndAwards', {
+    const response = await fetch("https://internsity-production.up.railway.app/profile/updateAchievementsAndAwards", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -432,7 +432,7 @@ async function updateProjects() {
         alert("Can not update the same details");
         return
     }
-    const response = await fetch(https://internsity-production.up.railway.app/profile/updateProjects', {
+    const response = await fetch("https://internsity-production.up.railway.app/profile/updateProjects", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -461,7 +461,7 @@ async function updateCertifications() {
         alert("Can not update the same details");
         return
     }
-    const response = await fetch(https://internsity-production.up.railway.app/profile/updateCertifications', {
+    const response = await fetch("https://internsity-production.up.railway.app/profile/updateCertifications", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -511,7 +511,7 @@ async function changeProfilePicture() {
                     formData.append('profilePhoto', file);
                     formData.append('email', data.personalInfo.email);
 
-                    const response = await fetch(https://internsity-production.up.railway.app/profile/updateProfilePicture', {
+                    const response = await fetch("https://internsity-production.up.railway.app/profile/updateProfilePicture", {
                         method: "POST",
                         body: formData,
                     });
