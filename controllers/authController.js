@@ -153,17 +153,17 @@ exports.register = async (req, res) => {
 
             }
             try {
-                await transporter.sendMail(mailOptions);
+                await transporter.sendMail(mailOptions);  // Use await
                 res.status(201).json({
                     msg: "User registered successfully and we've sent you a verification mail",
                     user: { id: newUser._id, email: newUser.personalInfo.email },
                     token,
                 });
             } catch (error) {
-                console.error('Mail error:', error);
+                console.error("Mail error:", error);
                 res.status(201).json({
                     msg: "User registered successfully but failed to send verification mail",
-                    user: { id: newUser.id, email: newUser.personalInfo.email },
+                    user: { id: newUser._id, email: newUser.personalInfo.email },
                     token,
                 });
             }
