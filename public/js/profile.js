@@ -1,10 +1,10 @@
-function getData() {
+async function getData() {
     console.log("Now funtion working");
     const user = localStorage.getItem('user');
     if (!user) {
         window.location.href = '/auth/login'
     }
-    const response = fetch("https://internsity-production.up.railway.app/profile/getProfile", {
+    const response = await fetch("https://internsity-production.up.railway.app/profile/getProfile", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -25,8 +25,9 @@ function getData() {
     }
     return data;
 }
-async function setData() {
-    const data = await getData();
+function setData() {
+    console.log("Now funtion working");
+    const data = getData();
     if (data) {
         // personalInfo
         if (data.personalInfo.fullName) document.getElementById('fullName').value = data.personalInfo.fullName;
