@@ -9,3 +9,6 @@ exports.generateId = async(User) => {
     return `IT${String(count + 1).padStart(9, '0')}`;
 
 };
+exports.randStr = () => {
+    return `IT${Math.random().toString(36).substring(2, 8)}`; // 6 random characters
+};

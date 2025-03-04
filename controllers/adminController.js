@@ -44,7 +44,7 @@ exports.newAdmin = async (req, res) => {
             isActive,
             lastLogin,
             createdAt,
-            createdBy,
+            created_by,
             permissions: {
                 manageUsers,
                 manageInternships,
