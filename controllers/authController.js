@@ -150,7 +150,7 @@ exports.register = async (req, res) => {
                 from: process.env.USER_EMAIL,
                 to: newUser.personalInfo.email,
                 subject: 'Internsity - Verify your Email',
-                html:`
+                html: `
                 <html>
                     <head>
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -195,7 +195,6 @@ exports.register = async (req, res) => {
 
 
             }
-<<<<<<< HEAD
             try {
                 await transporter.sendMail(mailOptions);  // Use await
                 res.status(201).json({
@@ -208,98 +207,100 @@ exports.register = async (req, res) => {
                 res.status(201).json({
                     msg: "User registered successfully but failed to send verification mail",
                     user: { id: newUser._id, email: newUser.personalInfo.email },
-                    token,
-=======
-                        try {
-                            await transporter.sendMail(mailOptions);  // Use await
-                        res.status(201).json({
-                            msg: "User registered successfully and we've sent you a verification mail",
-                        user: {id: newUser._id, email: newUser.personalInfo.email },
-                        token,
+                    token
                 });
-            } catch (error) {
-                            console.error("Mail error:", error);
-                        res.status(201).json({
-                            msg: "User registered successfully but failed to send verification mail",
-                        user: {id: newUser._id, email: newUser.personalInfo.email },
+
+                try {
+                    await transporter.sendMail(mailOptions);  // Use await
+                    res.status(201).json({
+                        msg: "User registered successfully and we've sent you a verification mail",
+                        user: { id: newUser._id, email: newUser.personalInfo.email },
                         token,
->>>>>>> c475416 (Committing local changes before pull)
-                });
+                    });
+                } catch (error) {
+                    console.error("Mail error:", error);
+                    res.status(201).json({
+                        msg: "User registered successfully but failed to send verification mail",
+                        user: { id: newUser._id, email: newUser.personalInfo.email },
+                        token,
+                    });
+                }
+
             }
-
         } catch (err) {
-                            res.status(500).send({ error: err.message });
+            res.status(500).send({ error: err.message });
         }
+
     }
+
+    
 };
-
-
 // Email verification route 
 exports.verifyEmail = async (req, res) => {
-    const {token} = req.params;
-                        try {
+    const { token } = req.params;
+    try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-                        const email = decoded.email;
-                        const pass = authUtils.randStr();
-                        // Hash the password
-                        const hashedPassword = await bcrypt.hash(pass, 10);
-                        let user = await User.updateOne({"personalInfo.email": email }, {$set: {"isEmailVerified": "true", "personalInfo.password": hashedPassword } });
-                        if (user[0] === 0) {
+        const email = decoded.email;
+        const pass = authUtils.randStr();
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(pass, 10);
+        let user = await User.updateOne({ "personalInfo.email": email }, { $set: { "isEmailVerified": "true", "personalInfo.password": hashedPassword } });
+        if (user[0] === 0) {
             return res.status(404).send('User not found or already verified.');
         }
-                        user = await User.findOne({"personalInfo.email": email })
-                        const mailOptions = {
-                            from: process.env.USER_EMAIL,
-                        to: email,
-                        subject: 'Thank you for verification',
-                        html: `
-                        <html>
-                            <head>
-                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                                        <title>Internsity - Email Verification</title>
-                                    </head>
-                                    <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 10; padding: 2;">
-                                        <div style="max-width: 500px; margin: 40px auto; background: #ffffff; border-radius: 10px; 
-                                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; padding: 20px; text-align: center;">
-                                            <div style="background: linear-gradient(to right, #007bff, #0056b3); color: #fff; padding: 15px; font-size: 24px; font-weight: bold;">
-                                                <div class="header">
-                                                    INTERNSITY
-                                                </div>
-                                            </div>
-                                            <div style="padding: 20px; font-size: 16px; color: #333;">
-                                                <p>Hello <strong>${user.personalInfo.fullName}</strong>,</p>
-                                                <p>Thank you for verifying your email. Here are your login details:</p>
-                                                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;">
-                                                    <p><strong>Email:</strong> ${email} </p>
-                                                    <p><strong>Password:</strong> ${pass} </p>
-                                                </div>
-                                                <p>If you need to reset your password, click the button below:</p>
-                                                <a href="https://internsity-production.up.railway.app/auth/login" style="display:inline-block; padding:12px 20px; background:#007bff; 
-                                              color:#fff; text-decoration:none; font-size:16px; 
-                                              border-radius:5px; margin-top:15px;">Login</a>
-                                                <a href="#" style="display:inline-block; padding:12px 20px; background:#007bff; 
-                                              color:#fff; text-decoration:none; font-size:16px; 
-                                              border-radius:5px; margin-top:15px;">Reset Password</a>
-                                                <p>If you didn't request this, please ignore this email.</p>
-                                            </div>
-                                            <div style="font-size: 12px; color: #777; padding: 15px; text-align: center;">
-                                                &copy; 2025 Internsity. All rights reserved.
+        user = await User.findOne({ "personalInfo.email": email })
+        const mailOptions = {
+            from: process.env.USER_EMAIL,
+            to: email,
+            subject: 'Thank you for verification',
+            html: `
+                    <html>
+                        <head>
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                                    <title>Internsity - Email Verification</title>
+                                </head>
+                                <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 10; padding: 2;">
+                                    <div style="max-width: 500px; margin: 40px auto; background: #ffffff; border-radius: 10px; 
+                            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; padding: 20px; text-align: center;">
+                                        <div style="background: linear-gradient(to right, #007bff, #0056b3); color: #fff; padding: 15px; font-size: 24px; font-weight: bold;">
+                                            <div class="header">
+                                                INTERNSITY
                                             </div>
                                         </div>
-                                    </body>
-                                </html>`
+                                        <div style="padding: 20px; font-size: 16px; color: #333;">
+                                            <p>Hello <strong>${user.personalInfo.fullName}</strong>,</p>
+                                            <p>Thank you for verifying your email. Here are your login details:</p>
+                                            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                                                <p><strong>Email:</strong> ${email} </p>
+                                                <p><strong>Password:</strong> ${pass} </p>
+                                            </div>
+                                            <p>If you need to reset your password, click the button below:</p>
+                                            <a href="https://internsity-production.up.railway.app/auth/login" style="display:inline-block; padding:12px 20px; background:#007bff; 
+                                          color:#fff; text-decoration:none; font-size:16px; 
+                                          border-radius:5px; margin-top:15px;">Login</a>
+                                            <a href="#" style="display:inline-block; padding:12px 20px; background:#007bff; 
+                                          color:#fff; text-decoration:none; font-size:16px; 
+                                          border-radius:5px; margin-top:15px;">Reset Password</a>
+                                            <p>If you didn't request this, please ignore this email.</p>
+                                        </div>
+                                        <div style="font-size: 12px; color: #777; padding: 15px; text-align: center;">
+                                            &copy; 2025 Internsity. All rights reserved.
+                                        </div>
+                                    </div>
+                                </body>
+                            </html>`
 
         }
 
 
-                                await transporter.sendMail(mailOptions);
-                                res.status(200).send('Email verified successfully!');
+        await transporter.sendMail(mailOptions);
+        res.status(200).send('Email verified successfully!');
 
 
     } catch (error) {
 
-                                    console.error('Verification Error:', error);
-                                res.status(400).send('Invalid or expired token.');
+        console.error('Verification Error:', error);
+        res.status(400).send('Invalid or expired token.');
     }
-};
+}
