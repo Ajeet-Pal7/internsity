@@ -163,8 +163,7 @@ exports.register = async (req, res) => {
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; padding: 20px; text-align: center;">
 
                                     <div style="background: #007bff; color: #fff; padding: 15px; font-size: 24px; font-weight: bold;">
-                                        <img src="https://internsity-production.up.railway.app/images/logo.svg"
-                                            alt="Internsity Logo" width="150" style="margin-top: 15px;">
+                                        INTERNSITY
                                     </div>
 
                                     <div style="padding: 20px; font-size: 16px; color: #333;">
@@ -184,7 +183,7 @@ exports.register = async (req, res) => {
                                     </div>
 
                                     <div style="font-size: 12px; color: #777; padding: 15px; text-align: center;">
-                                        © 2024 Internsity. All rights reserved.
+                                        © 2025 Internsity. All rights reserved.
                                     </div>
 
                                 </div>
@@ -232,10 +231,10 @@ exports.register = async (req, res) => {
         }
 
     }
-
     
 };
-// Email verification route 
+
+// Email verification method 
 exports.verifyEmail = async (req, res) => {
     const { token } = req.params;
     try {
@@ -276,7 +275,7 @@ exports.verifyEmail = async (req, res) => {
                                                 <p><strong>Password:</strong> ${pass} </p>
                                             </div>
                                             <p>If you need to reset your password, click the button below:</p>
-                                            <a href="https://internsity-production.up.railway.app/auth/login" style="display:inline-block; padding:12px 20px; background:#007bff; 
+                                            <a href="${process.env.APP_URL}/auth/login" style="display:inline-block; padding:12px 20px; background:#007bff; 
                                           color:#fff; text-decoration:none; font-size:16px; 
                                           border-radius:5px; margin-top:15px;">Login</a>
                                             <a href="#" style="display:inline-block; padding:12px 20px; background:#007bff; 
