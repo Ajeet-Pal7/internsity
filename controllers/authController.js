@@ -172,7 +172,7 @@ exports.register = async (req, res) => {
 
                                         <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 15px 0; text-align: center;">
                                             <p style="margin: 5px 0; font-size: 14px; color: #555;"><strong>Verification Link:</strong></p>
-                                            <a href="${process.env.APP_URL}/auth/verify/${token}"
+                                            <a href="${process.env.APP_URL}auth/verify/${token}"
                                                 style="display: inline-block; padding: 12px 20px; background: #007bff; color: #fff; text-decoration: none; 
                           font-size: 16px; border-radius: 5px; margin-top: 15px; transition: 0.3s;">
                                                 Verify Email
