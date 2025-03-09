@@ -489,11 +489,11 @@ async function changeProfilePicture() {
             const file = event.target.files[0];
             const fileSizeKB = Math.round(file.size / 1024);
 
-            if (fileSizeKB > 500) {
-                alert("File too large. Max: 500KB.");
+            if (fileSizeKB > 1024) {
+                alert("File too large. Max: 1MB.");
                 return;
-            } else if (fileSizeKB < 200) {
-                alert("File too small. Min: 200KB.");
+            } else if (fileSizeKB < 30) {
+                alert("File too small. Min: 30KB.");
                 return;
             }
 

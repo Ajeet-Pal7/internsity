@@ -11,4 +11,7 @@ router.route('/user-profiles')
 router.route('/admin')
     .post(adminController.newAdmin);
 
+router.route('/new-internship')
+    .post(adminController.newInternship);
+
 module.exports = router;

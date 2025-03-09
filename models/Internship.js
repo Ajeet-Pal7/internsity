@@ -14,7 +14,8 @@ const internshipSchema = new mongoose.Schema({
     description: { type: String, required: true },
     status: { type: String, required: true },
     category: { type: [String], required: true },
-    skills:{type:[String], required:true}
+    skills: { type: [String], required: true },
+    created_By: { type: String, required: true }
 });
 
 const Internship = mongoose.model("Internship", internshipSchema);

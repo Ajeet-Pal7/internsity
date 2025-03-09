@@ -1,0 +1,166 @@
+### **UNITED INSTITUTE OF MANAGEMENT**  
+(FACULTY OF UNDERGRADUATE STUDIES)  
+Affiliated to  
+**Prof. Rajendra Singh (Rajju Bhaiya) University, Prayagraj, UP**  
+
+---
+
+### **A Synopsis Report on**  
+# **INTERNSITY**  
+
+**Submitted for partial fulfillment for the award of the degree in**  
+**Bachelor of Computer Application (BCA)**  
+
+**Under the Supervision of**  
+**Mr. Jitendra Kumar**  
+
+**Submitted By:**  
+**Name:** Ajeet Pal  
+**Roll No.:** 2312105201025  
+**Batch:** 2022 – 2025  
+
+---
+
+## **TABLE OF CONTENTS**  
+
+| S No. | Title | Page No. |  
+|---|---|---|  
+| 1 | INTRODUCTION | 3 |  
+| 2 | TECHNOLOGIES USED | 4 |  
+| 3 | LAYOUT OF PROPOSED WORK | 5 |  
+| 4 | ROLE OF TEAM MEMBERS | 7 |  
+| 5 | MODULES OF PROJECT | 8 |  
+| 6 | CONTROL HIERARCHY | 9 |  
+| 7 | CONCLUSION | 10 |  
+
+---
+
+## **1. INTRODUCTION**  
+
+**INTERNSITY** is an **online virtual internship platform** designed for **IT students** to gain real-world experience by working on **advanced projects** in a **team-based, remote environment**. The platform will provide **internships, mentorship, learning modules, freelancing opportunities, and job placement support**.  
+
+Unlike other platforms that offer **only basic internship projects**, INTERNSITY focuses on:  
+- **Full-fledged development teams** with UI/UX designers, developers, analysts, and cybersecurity experts.  
+- **Real-time project collaboration** using online tools.  
+- **Advanced learning modules with integrated study blogs and video explanations.**  
+- **Freelancing projects assigned to interns, ensuring professional exposure and financial benefits.**  
+- **Collaboration with startups, companies, and universities for job placements.**  
+
+The goal of INTERNSITY is to provide a **structured, hands-on experience** where students can work in a professional development environment while gaining **verifiable lifetime certification**.
+
+---
+
+## **2. TECHNOLOGIES USED**  
+
+| Component | Technology Used |  
+|---|---|  
+| **Frontend (Website)** | HTML, CSS, JavaScript |  
+| **Backend (Server-Side)** | Node.js, Express.js |  
+| **Database** | MongoDB |  
+| **Version Control** | Git/GitHub |  
+| **Android App** | Java, Android Studio |  
+| **Deployment** | Railway (Planning for domain purchase) |  
+
+---
+
+## **3. LAYOUT OF PROPOSED WORK**  
+
+### **Phase 1: Planning & Research**  
+✔ Identifying required features for internship selection, project assignment, and mentorship.  
+✔ Analyzing existing internship models and improving upon them.  
+✔ Designing an intuitive UI/UX for better user experience.  
+
+### **Phase 2: Development (Current Progress)**  
+✔ **Website:** User authentication, profile management, internship listing.  
+✔ **Android App (Admin Panel):** User management, role assignment, internship posting.  
+
+### **Phase 3: Internship Application & Selection Process**  
+1. **Landing Page** → Overview of internships & features.  
+2. **Explore Opportunities** → Available internships, project categories.  
+3. **Login/Registration** → User authentication.  
+4. **Apply for Internship** → Submit application.  
+5. **Aptitude Round** → Automatic or manual shortlisting.  
+6. **Technical Round (TR) + HR Round** → Selection process.  
+7. **Team Formation** → UI/UX, Developers, Analysts, Security Experts.  
+8. **Mentor Allocation** → Guidance from industry professionals.  
+
+### **Phase 4: Project Execution & Learning Integration**  
+9. **Project Assignment** → Advanced projects, real-world exposure.  
+10. **Project Submission & Documentation** → Proper report maintenance.  
+11. **Learning Module** → Blogs, video tutorials, problem-solving tasks.  
+12. **Final Assessment** → Exam-based certification.  
+
+### **Phase 5: Freelancing Integration & Business Growth**  
+13. **Freelancing Projects** → Clients submit projects, interns work, company delivers.  
+14. **Revenue Distribution** → 60-70% of earnings given to interns.  
+15. **Job Placement Collaboration** → Tie-ups with startups, universities, companies.  
+
+---
+
+## **4. ROLE OF TEAM MEMBERS**  
+
+| Team Member | Role | Responsibility |  
+|---|---|---|  
+| **Ajeet Pal** | **Backend & DevOps** | Responsible for server-side development, database management, API integration, and overall deployment. |  
+| **Aman Sahu** | **Frontend Development & UI/UX** | Responsible for designing and developing the web interface, ensuring smooth UI/UX. |  
+| **Alok Bind** | **Frontend Development & Performance Optimization** | Works on UI responsiveness, frontend logic, and optimizing website performance. |  
+
+---
+
+## **5. MODULES OF PROJECT**  
+
+### **Internship Management**  
+- Application system, selection rounds, team formation.  
+- Internship tracking dashboard for real-time updates.  
+- Communication channel for interns and mentors.  
+
+### **Mentorship & Team Collaboration**  
+- Mentor allocation, remote teamwork, project tracking.  
+- Weekly progress reports and feedback sessions.  
+- Interactive task boards for efficient workflow management.  
+
+### **Learning Module**  
+- Study blogs, integrated video tutorials, interactive problem-solving.  
+- Self-paced courses with quizzes and certifications.  
+- AI-based recommendation system for personalized learning paths.  
+
+### **Freelancing Model**  
+- Clients submit projects, interns develop, admins review and deliver.  
+- Secure payment system with milestone-based releases.  
+- Client rating and feedback system for quality assurance.  
+
+### **Certificate Generation**  
+- Digital lifetime certificates, paid physical certificate delivery.  
+- Blockchain-based verification system for authenticity.  
+- Customizable certificate templates for professional recognition.  
+
+### **Admin & SuperAdmin Panel**  
+- Manage users, internships, site settings, analytics tracking.  
+- Automated intern ranking system based on performance metrics.  
+- Internship completion reports and detailed analytics dashboard.  
+
+---
+
+## **6. CONTROL HIERARCHY**  
+
+```
+─INTERNSITY─────────────────────────
+    ├───Internship Management
+    ├───Project Execution
+    ├───Learning Platform
+    ├───Freelancing Model
+    ├───Admin Panel
+    ├───SuperAdmin Panel
+```
+
+---
+
+## **7. CONCLUSION**  
+
+✔ **INTERNSITY** is a **real-world virtual internship platform**, focusing on practical learning, team collaboration, and freelancing opportunities.  
+✔ It **bridges the gap** between students and real-world IT industry needs.  
+✔ The **platform is scalable** and will expand to **job placements and university collaborations**.  
+✔ With a **structured learning path, project execution, and certification**, INTERNSITY provides an **end-to-end experience for IT students**.  
+
+---
+

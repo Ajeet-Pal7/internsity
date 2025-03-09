@@ -2,8 +2,10 @@ const { User } = require('../models/User');
 const Admin = require('../models/Admin');
 const superadmin = require('../models/SuperAdmin');
 const Moderator = require('../models/Moderator');
+const Internship = require('../models/Internship');
 const path = require('path');
 const otherUtils = require('../utils/otherUtils');
+const internshipUtils = require('../utils/internshipUtils');
 const { param } = require('../routes/authRoutes');
 const { permission } = require('process');
 const { error } = require('console');
@@ -70,9 +72,9 @@ exports.newAdmin = async (req, res) => {
                 } else if (newAdmin.role == "superadmin") {
                     return res.json({ "error": "Permission denied" });
                 }
-            } else if(created_by.role == "superadmin" && created_by.isActive){
+            } else if (created_by.role == "superadmin" && created_by.isActive) {
                 await superadmin.create(newAdmin);
-                return res.json({"Success" : "created successfully"});
+                return res.json({ "Success": "created successfully" });
             } else {
                 return res.json({ "error": "You can not create accounts" })
             }
@@ -87,3 +89,64 @@ exports.newAdmin = async (req, res) => {
     }
 
 }
+
+
+exports.newInternship = async (req, res) => {
+    try {
+        const internshipDetails = {
+            id,
+            title,
+            appliedOn,
+            endedAt,
+            type,
+            location,
+            experience,
+            salary,
+            deadline,
+            imageURL,
+            description,
+            status,
+            category,
+            skills,
+            created_By
+        } = req.body;
+
+        console.log("Received file:", req.file);
+        console.log("Received body:", req.body);
+
+        try {
+
+            await internshipUtils.uploadInternshipPicture(req, res, async (err) => {
+                if (err) {
+                    console.error("Multer error:", err);
+                    return res.status(400).json({ msg: err.message });
+                }
+                if (!req.file) {
+                    return res.status(400).json({ message: 'Please upload a Internship photo!' });
+                }
+                const filePath = `../public/images/internship/${req.file.originalname}`;
+                internshipDetails.imageURL = [filePath];
+                try {
+                    const internship = await Internship.create(internshipDetails);
+                    if (!internship) {
+                        return res.status(404).json({ error: "Something went wrong" });
+                    }
+
+                    console.log("Successfully Created Internship");
+                    return res.status(202).json({ msg: "New Internship created successfully" });
+                } catch (error) {
+                    console.error("Error:", error);
+                    return res.status(500).json({ msg: "Internal server error" });
+                }
+            });
+        } catch (error) {
+            return res.json({ error: "Error while saving Image" });
+        }
+
+    } catch (error) {
+        console.log("Error", error);
+        return res.join({ error: "Something went wrong" });
+    }
+
+
+};

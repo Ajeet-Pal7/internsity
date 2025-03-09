@@ -39,9 +39,9 @@ NOTE: This file contains all scripts for the actual Template.
   "use strict";
   var INTERNSITY = {};
 
-/*************************
-  Predefined Variables
-*************************/
+  /*************************
+    Predefined Variables
+  *************************/
   var $window = $(window),
     $document = $(document),
     $body = $('body'),
@@ -68,38 +68,38 @@ NOTE: This file contains all scripts for the actual Template.
   INTERNSITY.dropdownmenu = function () {
     if ($('.navbar').exists()) {
       $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
-      if (!$(this).next().hasClass('show')) {
-        $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
-      }
-      var $subMenu = $(this).next(".dropdown-menu");
-      $subMenu.toggleClass('show');
-      $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
-        $('.dropdown-submenu .show').removeClass("show");
-      });
-      return false;
+        if (!$(this).next().hasClass('show')) {
+          $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+        }
+        var $subMenu = $(this).next(".dropdown-menu");
+        $subMenu.toggleClass('show');
+        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+          $('.dropdown-submenu .show').removeClass("show");
+        });
+        return false;
       });
     }
   };
 
   INTERNSITY.menuaddclass = function () {
-     $('.top-menu').on('click',function () {
-        $('.nav-menu').toggleClass('open-menu');
+    $('.top-menu').on('click', function () {
+      $('.nav-menu').toggleClass('open-menu');
     });
   };
 
   INTERNSITY.menuToggle = function () {
-     $('.menu-overlay-offcanvas .navbar-nav .nav-link').on('click',function () {
-        $(this).next('.dropdown-menu').slideToggle();
-     });
+    $('.menu-overlay-offcanvas .navbar-nav .nav-link').on('click', function () {
+      $(this).next('.dropdown-menu').slideToggle();
+    });
   };
 
   INTERNSITY.offcanvasSidebar = function () {
-     $('.sidebar-btn').on('click',function () {
-        $('body').addClass('mobile-offcanvas');
-     });
-     $('.offcanvas-sidebar .btn-close, .offcanvas-backdrop').on('click',function () {
-        $('body').removeClass('mobile-offcanvas');
-     });
+    $('.sidebar-btn').on('click', function () {
+      $('body').addClass('mobile-offcanvas');
+    });
+    $('.offcanvas-sidebar .btn-close, .offcanvas-backdrop').on('click', function () {
+      $('body').removeClass('mobile-offcanvas');
+    });
   };
 
 
@@ -108,26 +108,26 @@ NOTE: This file contains all scripts for the actual Template.
   *************************/
 
   INTERNSITY.isSticky = function () {
-    var $window       = $(window);
+    var $window = $(window);
     var lastScrollTop = 0;
-    var $header       = $('.header');
-    var headerHeight  = $header.outerHeight();
+    var $header = $('.header');
+    var headerHeight = $header.outerHeight();
 
-    $window.scroll(function() {
-      var windowTop  = $window.scrollTop();
+    $window.scroll(function () {
+      var windowTop = $window.scrollTop();
 
-      if ( windowTop >= headerHeight ) {
-        $header.addClass( 'is-sticky' );
+      if (windowTop >= headerHeight) {
+        $header.addClass('is-sticky');
       } else {
-        $header.removeClass( 'is-sticky' );
-        $header.removeClass( 'sticky-show' );
+        $header.removeClass('is-sticky');
+        $header.removeClass('sticky-show');
       }
 
-      if ( $header.hasClass( 'is-sticky' ) ) {
-        if ( windowTop < lastScrollTop ) {
-          $header.addClass( 'sticky-show' );
+      if ($header.hasClass('is-sticky')) {
+        if (windowTop < lastScrollTop) {
+          $header.addClass('sticky-show');
         } else {
-          $header.removeClass( 'sticky-show' );
+          $header.removeClass('sticky-show');
         }
       }
       $('#lastscrolltop').text('LastscrollTop: ' + lastScrollTop);
@@ -142,20 +142,20 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
        Tooltip
   *************************/
-  INTERNSITY.Tooltip = function() {
+  INTERNSITY.Tooltip = function () {
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
     })
   }
 
   /*************************
         Popover
   *************************/
-  INTERNSITY.Popover = function() {
+  INTERNSITY.Popover = function () {
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
     })
   }
 
@@ -180,7 +180,7 @@ NOTE: This file contains all scripts for the actual Template.
   INTERNSITY.customAccordion = function () {
     // (Optional) Active an item if it has the class "is-active"
     $(".pgs-accordion > .accordion-item.is-active").children(".accordion-content").slideDown();
-    $(".pgs-accordion > .accordion-item").click(function() {
+    $(".pgs-accordion > .accordion-item").click(function () {
       // Cancel the siblings
       $(this).siblings(".accordion-item").removeClass("is-active").children(".accordion-content").slideUp();
       // Toggle the item
@@ -274,7 +274,7 @@ NOTE: This file contains all scripts for the actual Template.
   INTERNSITY.countdownTimer = function () {
     if ($countdownTimer.exists()) {
       $countdownTimer.downCount({
-        date: '09/14/2025 12:00:00', // Month/Date/Year HH:MM:SS
+        date: '03/14/2025 12:00:00', // Month/Date/Year HH:MM:SS
         offset: -4
       });
     }
@@ -284,7 +284,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
     Swiper Slider
   *************************/
-  INTERNSITY.historySwiperSlider = function() {
+  INTERNSITY.historySwiperSlider = function () {
     new Swiper('.swiper-container', {
       loop: true,
       nextButton: '.swiper-button-next',
@@ -293,7 +293,7 @@ NOTE: This file contains all scripts for the actual Template.
       paginationClickable: true,
       spaceBetween: 30,
       breakpoints: {
-      
+
         1199: {
           slidesPerView: 3,
           spaceBetween: 30
@@ -357,7 +357,7 @@ NOTE: This file contains all scripts for the actual Template.
     progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
     progressPath.style.strokeDashoffset = pathLength;
     progressPath.getBoundingClientRect();
-    progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';    
+    progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
     var updateProgress = function () {
       var scroll = $(window).scrollTop();
       var height = $(document).height() - $(window).height();
@@ -365,19 +365,19 @@ NOTE: This file contains all scripts for the actual Template.
       progressPath.style.strokeDashoffset = progress;
     }
     updateProgress();
-    $(window).scroll(updateProgress); 
+    $(window).scroll(updateProgress);
     var offset = 300;
     var duration = 600;
-    jQuery(window).on('scroll', function() {
+    jQuery(window).on('scroll', function () {
       if (jQuery(this).scrollTop() > offset) {
         jQuery('.back-to-top').addClass('active-progress');
       } else {
         jQuery('.back-to-top').removeClass('active-progress');
       }
-    });       
-    jQuery('.back-to-top').on('click', function(event) {
+    });
+    jQuery('.back-to-top').on('click', function (event) {
       event.preventDefault();
-      jQuery('html, body').animate({scrollTop: 0}, duration);
+      jQuery('html, body').animate({ scrollTop: 0 }, duration);
       return false;
     })
   }
@@ -387,18 +387,18 @@ NOTE: This file contains all scripts for the actual Template.
   *************************/
   INTERNSITY.searchbar = function () {
     if ($("#search").exists()) {
-      $('a[href="#search"]').on('click', function(event) {
+      $('a[href="#search"]').on('click', function (event) {
         event.preventDefault();
         $('#search').addClass('open');
         $('#search > form > input[type="search"]').focus();
       });
-      $('#search, #search button.close').on('click keyup', function(event) {
+      $('#search, #search button.close').on('click keyup', function (event) {
         if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
           $(this).removeClass('open');
         }
       });
       //Do not include! This prevents the form from submitting for DEMO purposes only!
-      $('form').submit(function(event) {
+      $('form').submit(function (event) {
         event.preventDefault();
         return false;
       })
@@ -492,28 +492,28 @@ NOTE: This file contains all scripts for the actual Template.
   gsap.utils.toArray(".awards-item, .case-studies-item, .blog-style-3").forEach((el) => {
     let image = el.querySelector('.gsap-img-animation'),
       setX, setY,
-    align = e => {
-      setX(e.clientX);
-      setY(e.clientY);
-    },
-    startFollow = () => document.addEventListener("mousemove", align),
-    stopFollow = () => document.removeEventListener("mousemove", align),
-    fade = gsap.to(image, {autoAlpha: 1, ease: "none", paused: true, onReverseComplete: stopFollow});
-    
+      align = e => {
+        setX(e.clientX);
+        setY(e.clientY);
+      },
+      startFollow = () => document.addEventListener("mousemove", align),
+      stopFollow = () => document.removeEventListener("mousemove", align),
+      fade = gsap.to(image, { autoAlpha: 1, ease: "none", paused: true, onReverseComplete: stopFollow });
+
     el.addEventListener('mouseenter', (e) => {
       fade.play();
       startFollow();
       if (activeImage) { // if there's an actively-animating one, we should match its position here
-        gsap.set(image, {x: gsap.getProperty(activeImage, "x"), y: gsap.getProperty(activeImage, "y")});
+        gsap.set(image, { x: gsap.getProperty(activeImage, "x"), y: gsap.getProperty(activeImage, "y") });
       }
       activeImage = image;
-      setX = gsap.quickTo(image, "x", {duration: 0.5, ease: "power3"}),
-      setY = gsap.quickTo(image, "y", {duration: 0.5, ease: "power3"})
+      setX = gsap.quickTo(image, "x", { duration: 0.5, ease: "power3" }),
+        setY = gsap.quickTo(image, "y", { duration: 0.5, ease: "power3" })
       align(e);
     });
-    
+
     el.addEventListener('mouseleave', () => fade.reverse());
-   
+
   });
 
   /*************************
@@ -622,15 +622,15 @@ NOTE: This file contains all scripts for the actual Template.
   const updateCursor = () => {
     const diffX = Math.round(mouse.x - pos.x);
     const diffY = Math.round(mouse.y - pos.y);
-    
+
     pos.x += diffX * speed;
     pos.y += diffY * speed;
-    
+
     const angle = getAngle(diffX, diffY);
     const squeeze = getSqueeze(diffX, diffY);
-    
-    const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) +')';
-    const rotate = 'rotate(' + angle +'deg)';
+
+    const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) + ')';
+    const rotate = 'rotate(' + angle + 'deg)';
     const translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
 
     cursor.style.transform = translate;
@@ -648,7 +648,7 @@ NOTE: This file contains all scripts for the actual Template.
   const cursorLinks = document.querySelectorAll('a:not(.cursor-style)');
 
   cursorModifiers.forEach(curosrModifier => {
-    curosrModifier.addEventListener('mouseenter', function() {
+    curosrModifier.addEventListener('mouseenter', function () {
       const className = this.getAttribute('data-cursor-type');
       cursor.classList.add(className);
       const cursorText = this.getAttribute('data-custom-text');
@@ -659,7 +659,7 @@ NOTE: This file contains all scripts for the actual Template.
       }
     });
 
-    curosrModifier.addEventListener('mouseleave', function() {
+    curosrModifier.addEventListener('mouseleave', function () {
       const className = this.getAttribute('data-cursor-type');
       cursor.classList.remove(className);
       cursor.removeAttribute('data-cursor-text');
@@ -667,18 +667,18 @@ NOTE: This file contains all scripts for the actual Template.
   });
 
   cursorLinks.forEach(cursorLink => {
-    cursorLink.addEventListener('mouseenter', function() {
+    cursorLink.addEventListener('mouseenter', function () {
       //const className = this.getAttribute('a');
       cursor.classList.add('cursor-link');
     });
 
-    cursorLink.addEventListener('mouseleave', function() {
+    cursorLink.addEventListener('mouseleave', function () {
       //const className = this.getAttribute('a');
       cursor.classList.remove('cursor-link');
     });
   });
 
-   
+
   /*************************
   Shuffle
   *************************/
@@ -693,16 +693,16 @@ NOTE: This file contains all scripts for the actual Template.
         speed: 700,
         columnThreshold: 0
       });
-      jQuery(document).ready(function(){
-        jQuery(".btn-filter").on( 'click', function(){
+      jQuery(document).ready(function () {
+        jQuery(".btn-filter").on('click', function () {
           var data_group = jQuery(this).attr('data-group');
-          if( data_group != 'all' ){
+          if (data_group != 'all') {
             shuffleInstance.filter([data_group]);
           } else {
             shuffleInstance.filter();
           }
         });
-        $(".filters-group .btn-filter").on( 'click', function(){
+        $(".filters-group .btn-filter").on('click', function () {
           $(".filters-group .btn-filter").removeClass("active");
           $(this).addClass("active");
         });
@@ -714,7 +714,7 @@ NOTE: This file contains all scripts for the actual Template.
    Qty
   *************************/
   INTERNSITY.qty = function () {
-    $(document).ready(function() {
+    $(document).ready(function () {
       $('.minus').click(function () {
         var $input = $(this).parent().find('input');
         var count = parseInt($input.val()) - 1;
@@ -736,10 +736,10 @@ NOTE: This file contains all scripts for the actual Template.
    Button Effect
   *************************/
   INTERNSITY.buttonEffect = function () {
-    $.attractHover('.btn-effect',{
-        proximity: 70,
-        magnetism: 3
-      }
+    $.attractHover('.btn-effect', {
+      proximity: 70,
+      magnetism: 3
+    }
     );
   };
 
@@ -748,7 +748,7 @@ NOTE: This file contains all scripts for the actual Template.
   *************************/
   INTERNSITY.casestudyFancy = function () {
     var portfolioItem = $('.case-study-fancy-wrapper .case-studies-wrapper');
-    $(portfolioItem).hover(function(){
+    $(portfolioItem).hover(function () {
       $(portfolioItem).removeClass("active");
       $(this).addClass("active");
     });
@@ -758,14 +758,14 @@ NOTE: This file contains all scripts for the actual Template.
   Workspaces
   *************************/
   INTERNSITY.workspaces = function () {
-    $(".workspaces-inner .workspaces-content").each(function() {
+    $(".workspaces-inner .workspaces-content").each(function () {
       var blockHover = $(this);
-      blockHover.children('.workspaces-info-item').hover(function() {
+      blockHover.children('.workspaces-info-item').hover(function () {
         blockHover.find('.workspaces-info-item').removeClass('item-active');
         $(this).addClass('item-active');
         var id = $(this).data('tab');
         $(this).parents(".workspaces-inner").find(".workspaces-image-item").removeClass('image-active');
-        $('#'+id).addClass("image-active");
+        $('#' + id).addClass("image-active");
       });
     });
   };
@@ -775,7 +775,7 @@ NOTE: This file contains all scripts for the actual Template.
   *************************/
   INTERNSITY.stickyFooter = function () {
     var footerHeight = $('.sticky-footer').height();
-    $('.site-content').css('margin-bottom', footerHeight+'px');
+    $('.site-content').css('margin-bottom', footerHeight + 'px');
   };
 
   /*************************
@@ -798,43 +798,43 @@ NOTE: This file contains all scripts for the actual Template.
        INTERNSITY Window load and functions
   ****************************************************/
   //Window Resize functions
-  $(window).resize(function(){
+  $(window).resize(function () {
     INTERNSITY.stickyFooter();
   });
 
   //Window load functions
   $window.on("load", function () {
     INTERNSITY.preloader(),
-    INTERNSITY.shuffle(),
-    INTERNSITY.customAccordion(),
-    INTERNSITY.progressBar(),
-    INTERNSITY.stickyFooter();
+      INTERNSITY.shuffle(),
+      INTERNSITY.customAccordion(),
+      INTERNSITY.progressBar(),
+      INTERNSITY.stickyFooter();
   });
 
   //Document ready functions
   $document.ready(function () {
     INTERNSITY.counters(),
-    INTERNSITY.slickslider(),
-    INTERNSITY.dropdownmenu(),
-    INTERNSITY.menuaddclass(),
-    INTERNSITY.menuToggle(),
-    INTERNSITY.offcanvasSidebar(),
-    INTERNSITY.lenisSmoothScroll(),
-    INTERNSITY.lenisSmoothScroll2(),
-    INTERNSITY.isSticky(),
-    INTERNSITY.goToTop(),
-    INTERNSITY.countdownTimer(),
-    INTERNSITY.Tooltip(),
-    INTERNSITY.Popover(),
-    INTERNSITY.historySwiperSlider(),
-    INTERNSITY.searchbar(),
-    INTERNSITY.rangesliders(),
-    INTERNSITY.mediaPopups(),
-    INTERNSITY.carousel(),
-    INTERNSITY.qty(),
-    INTERNSITY.buttonEffect(),
-    INTERNSITY.casestudyFancy(),
-    INTERNSITY.workspaces(),
-    INTERNSITY.jarallaxBG();
+      INTERNSITY.slickslider(),
+      INTERNSITY.dropdownmenu(),
+      INTERNSITY.menuaddclass(),
+      INTERNSITY.menuToggle(),
+      INTERNSITY.offcanvasSidebar(),
+      INTERNSITY.lenisSmoothScroll(),
+      INTERNSITY.lenisSmoothScroll2(),
+      INTERNSITY.isSticky(),
+      INTERNSITY.goToTop(),
+      INTERNSITY.countdownTimer(),
+      INTERNSITY.Tooltip(),
+      INTERNSITY.Popover(),
+      INTERNSITY.historySwiperSlider(),
+      INTERNSITY.searchbar(),
+      INTERNSITY.rangesliders(),
+      INTERNSITY.mediaPopups(),
+      INTERNSITY.carousel(),
+      INTERNSITY.qty(),
+      INTERNSITY.buttonEffect(),
+      INTERNSITY.casestudyFancy(),
+      INTERNSITY.workspaces(),
+      INTERNSITY.jarallaxBG();
   });
 })(jQuery);

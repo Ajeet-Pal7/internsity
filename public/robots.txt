@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /admin/          # Block admin routes
+Disallow: /dashboard/      # Block user dashboard
+Disallow: /profile/        # Block private profiles
+Disallow: /uploads/        # Block profile picture uploads
+Disallow: /api/            # Block backend API routes
+
+Allow: /public/
+Allow: /internships/
+Allow: /jobs/
+Allow: /blog/
+
+Sitemap: https://internsity.in/sitemap.xml
