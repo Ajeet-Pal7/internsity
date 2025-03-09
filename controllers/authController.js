@@ -231,7 +231,7 @@ exports.register = async (req, res) => {
         }
 
     }
-    
+
 };
 
 // Email verification method 
@@ -294,7 +294,11 @@ exports.verifyEmail = async (req, res) => {
 
 
         await transporter.sendMail(mailOptions);
-        res.status(200).send('Email verified successfully!');
+        await otherUtils.sendFileWithFallback(
+            res,
+            path.join(__dirname, '../public', 'account_verification_success.html'),
+            path.join(__dirname, '../public', 'error-404.html')
+        );
 
 
     } catch (error) {
