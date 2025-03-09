@@ -15,18 +15,19 @@ connectDB();
 
 // Middleware setup
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.use(express.static("public", {
+  etag: false, // Disable etag caching
+  lastModified: false, // Disable last-modified caching
+  setHeaders: (res, path) => {
+    res.set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+  }
+}));
+
 app.use(express.json());
 app.use(cors({ origin: "https://internsity-production.up.railway.app", methods: "GET,POST,PUT,DELETE" }));
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-// app.use(session({
-//     secret: process.env.SECRET,
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: { secure: false, httpOnly: true, maxAge: 30 * 60 * 1000 }
-// }));
 
 app.get('/', async (req, res) => {
     await otherUtils.sendFileWithFallback(
@@ -35,15 +36,6 @@ app.get('/', async (req, res) => {
                 path.join(process.cwd(), 'public', 'error-404.html')
             );
 });
-
-// app.get('/pages/about', async (req, res) => {
-//     console.log("Function Working");
-//     await otherUtils.sendFileWithFallback(
-//                 res,
-//                 path.join(process.cwd(), 'public', 'about-us.html'),
-//                 path.join(process.cwd(), 'public', 'error-404.html')
-//             );
-// });
 
 // Import Routes
 app.use('/auth', require('./routes/authRoutes'));
