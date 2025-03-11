@@ -75,7 +75,7 @@ async function register() {
         allowMSGOnWhatsApp: document.getElementById('allowMSGOnWhatsApp').checked,
     };
 
-    if(!user.agreeWithTermsAndConditions){
+    if (!user.agreeWithTermsAndConditions) {
         alert("Please agree with terms & conditions to continue");
         return
     }
@@ -117,3 +117,38 @@ async function register() {
         alert("Failed to submit the form. Please try again.");
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const privacy_policy_container = document.querySelector(".privacy-policy-container-popup");
+    const terms_conditions_container = document.querySelector(".terms-conditions-container-popup");
+    const overlay = document.createElement("div");
+    overlay.classList.add("popup-overlay");
+    document.body.appendChild(overlay);
+
+    const openPrivacyPolicy = document.querySelector("#open-privacy-policy-popup");
+    const openTermsConditions = document.querySelector("#open-terms-condition-popup");
+    const closePopupBtn = document.querySelector(".popup-close");
+
+    openPrivacyPolicy.addEventListener("click", function () {
+        privacy_policy_container.classList.add("active");
+        overlay.classList.add("active");
+    });
+
+    openTermsConditions.addEventListener("click", function () {
+        terms_conditions_container.classList.add("active");
+        overlay.classList.add("active");
+    });
+
+    closePopupBtn.addEventListener("click", function () {
+        if (privacy_policy_container.classList.contains('active'))
+            privacy_policy_container.classList.remove("active");
+        if (terms_conditions_container.classList.contains('active'))
+            terms_conditions_container.classList.remove('active');
+        overlay.classList.remove("active");
+    });
+
+    // Close when clicking outside the popup
+    overlay.addEventListener("click", function () {
+        privacy_policy_container.classList.remove("active");
+        overlay.classList.remove("active");
+    });
+});
