@@ -150,3 +150,13 @@ exports.newInternship = async (req, res) => {
 
 
 };
+
+exports.login = async (req, res) => {
+    const adminDetails = {
+        email,
+        password
+    } = req.body;
+    const admin = await Admin.findOne({ "email": adminDetails.email });
+    console.log(admin);
+    return res.json(admin);
+}

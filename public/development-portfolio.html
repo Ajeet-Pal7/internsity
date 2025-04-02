@@ -39,55 +39,94 @@
   <div id="page" class="main">
 
     <!--=================================
-      Header -->
+          Header -->
     <header class="header header-default header-sticky header-absolute">
       <div class="header-inner">
         <div class="site-logo">
-          <a class="navbar-brand" href="index.html"><img class="img-fluid" src="images/logo.svg" alt="logo" /></a>
+          <a class="navbar-brand" href="/">
+            <img class="img-fluid" src="images/logo.svg" alt="logo" />
+          </a>
         </div>
         <div class="site-menu d-none d-xl-block">
           <ul class="main-menu">
-            <li class="nav-item active"><a class="nav-link" href="index.html">Home <i class="fa-solid fa-chevron-down"></i></a>
+            <li class="nav-item"><a class="nav-link" href="/">Home <i class="fa-solid fa-chevron-down"></i></a>
               <ul class="submenu">
-                <li><a class="nav-link active" href="index.html">Home 01</a></li>
-                <li><a class="nav-link" href="index-02.html">Home 02</a></li>
-                <li><a class="nav-link" href="index-03.html">Home 03</a></li>
+                <li><a class="nav-link" href="/">Dark</a></li>
+                <li><a class="nav-link" href="/">Light</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">Pages <i class="fa-solid fa-chevron-down"></i></a>
               <ul class="submenu">
-                <li><a class="nav-link" href="index.html">Home</a></li>
-                <li><a class="nav-link" href="about-us.html">About Us</a></li>
-                <li><a class="nav-link" href="service-detail.html">Features</a></li>
-                <li><a class="nav-link" href="careers.html">Internship Process</a></li>
-                <li><a class="nav-link" href="team.html">Teams</a></li>
-                <li><a class="nav-link" href="faq.html">Faq</a></li>
-                <li><a class="nav-link" href="contact-us.html">Contact us</a></li>
-                <li><a class="nav-link" href="coming-soon.html">Coming Soon</a></li>
+                <li><a class="nav-link" href="/pages/about">About Us</a></li>
+                <li><a class="nav-link" href="/pages/service">Features</a></li>
+                <li><a class="nav-link" href="/internships?category=featured%20internships">Internships</a></li>
+                <li><a class="dropdown-item" href="/pages/profile">Profile</a></li>
+                <li><a class="dropdown-item" href="/auth/login">Login</a></li>
+                <li><a class="nav-link" href="/pages/team">Teams</a></li>
+                <li><a class="nav-link" href="/pages/faq">Faq</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Service <i class="fa-solid fa-chevron-down"></i></a>
+            <li class="nav-item"><a class="nav-link" href="#">Internships<i class="fa-solid fa-chevron-down"></i></a>
               <ul class="submenu">
-                <li><a class="nav-link" href="service.html">Service</a></li>
-                <li><a class="nav-link" href="service-detail.html">Service Single</a></li>
+                <li><a class="nav-link" href="/internships?category=featured%20internships"> Featured Internships </a>
+                </li>
+                <li><a class="nav-link" href="/internships?category=programming%20internships"> Programming Internships
+                  </a></li>
+                <li><a class="nav-link" href="/internships?category=development%20internships"> Development Internships
+                  </a></li>
+                <li><a class="nav-link" href="/internships?category=mobile%20app%20development"> Mobile app Development
+                  </a></li>
+                <li><a class="nav-link" href="/internships?category=cybersecurty%20internships"> Cybersecurity
+                    Internships </a></li>
+                <li><a class="nav-link" href="/internships?category=datascience%20and%20machine%20learning"> Data
+                    Science & ML </a></li>
+                <li><a class="nav-link" href="/internships?category=cloud%20computing%20and%20devops"> Cloud Computing
+                    and DevOps </a></li>
+                <li><a class="nav-link" href="/internships?category=ui%20ux%20design"> UI/UX Design </a></li>
+                <li><a class="nav-link" href="/internships?category=game%20development"> Game Development </a></li>
+                <li><a class="nav-link" href="/internships?category=database%20internships"> Database Management </a>
+                </li>
+                <li><a class="nav-link" href="/internships?category=digital%20marketing"> Digital Marketing </a></li>
+                <li><a class="nav-link" href="/internships?category=networking%20internships"> Networking </a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Case Studies <i class="fa-solid fa-chevron-down"></i></a>
+            <li class="nav-item"><a class="nav-link" href="#">Learn<i class="fa-solid fa-chevron-down"></i></a>
               <ul class="submenu">
-                <li><a class="nav-link" href="case-studies.html">Case Studies</a></li>
-                <li><a class="nav-link" href="case-studies-detail.html">Case Studies Single</a></li>
+                <li><a class="nav-link" href="/pages/comming-soon">C/C++</a></li>
+                <li><a class="nav-link" href="/pages/comming-soon">Java</a></li>
+                <li><a class="nav-link" href="/pages/comming-soon">Python</a></li>
+                <li><a class="nav-link" href="/pages/comming-soon">Android</a></li>
+                <li><a class="nav-link" href="/pages/comming-soon">C# .NET</a></li>
+                <li><a class="nav-link" href="/pages/comming-soon">Web Dev</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Blog <i class="fa-solid fa-chevron-down"></i></a>
+            <li class="nav-item active"><a class="nav-link" href="#">Project Portfolio <i class="fa-solid fa-chevron-down"></i></a>
               <ul class="submenu">
-                <li><a class="nav-link" href="blog.html">Blog Standard</a></li>
-                <li><a class="nav-link" href="blog-detail.html">Blog Single</a></li>
+                <li><a class="nav-link" href="/portfolio?category=featured%20internships"> Featured Internships </a>
+                </li>
+                <li><a class="nav-link" href="/portfolio?category=programming%20internships"> Programming Internships
+                  </a></li>
+                <li><a class="nav-link active" href="/portfolio?category=development%20internships"> Development Internships
+                  </a></li>
+                <li><a class="nav-link" href="/portfolio?category=mobile%20app%20development"> Mobile app Development
+                  </a></li>
+                <li><a class="nav-link" href="/portfolio?category=cybersecurty%20internships"> Cybersecurity Internships
+                  </a></li>
+                <li><a class="nav-link" href="/portfolio?category=datascience%20and%20machine%20learning"> Data Science
+                    & ML </a></li>
+                <li><a class="nav-link" href="/portfolio?category=cloud%20computing%20and%20devops"> Cloud Computing and
+                    DevOps </a></li>
+                <li><a class="nav-link" href="/portfolio?category=ui%20ux%20design"> UI/UX Design </a></li>
+                <li><a class="nav-link" href="/portfolio?category=game%20development"> Game Development </a></li>
+                <li><a class="nav-link" href="/portfolio?category=database%20internships"> Database Management </a></li>
+                <li><a class="nav-link" href="/portfolio?category=digital%20marketing"> Digital Marketing </a></li>
+                <li><a class="nav-link" href="/portfolio?category=networking%20internships"> Networking </a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="/pages/contact-us">Contact</a></li>
           </ul>
         </div>
-
+    
         <div class="site-action d-none d-xl-block">
           <div class="action-hamburger">
             <a class="hamburger" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
@@ -99,7 +138,7 @@
             </a>
           </div>
         </div>
-
+    
         <div class="mobile-action d-block d-xl-none">
           <div class="mobile-hamburger">
             <a class="hamburger" href="#" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas"
@@ -115,11 +154,11 @@
     </header>
 
     <!--=================================
-      Main Menu OffCanvas -->
+          Main Menu OffCanvas -->
     <div class="offcanvas main-menu-offcanvas offcanvas-end" tabindex="-1" id="menuOffcanvas"
       aria-labelledby="menuOffcanvasLabel">
       <div class="offcanvas-header">
-        <a id="menuOffcanvasLabel" class="navbar-brand" href="index.html"><img class="img-fluid" src="images/logo.svg"
+        <a id="menuOffcanvasLabel" class="navbar-brand" href="/"><img class="img-fluid" src="images/logo.svg"
             alt="logo" /></a>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i
             class="fa-solid fa-xmark"></i></button>
@@ -132,50 +171,88 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">Home</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item active" href="index.html">Home 01</a></li>
-                  <li><a class="dropdown-item" href="index-02.html">Home 02</a></li>
-                  <li><a class="dropdown-item" href="index-03.html">Home 03</a></li>
+                  <li><a class="dropdown-item " href="/">Dark</a></li>
+                  <li><a class="dropdown-item" href="/">Light</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="index.html">Home</a></li>
-                  <li><a class="dropdown-item" href="about-us.html">About Us</a></li>
-                  <li><a class="dropdown-item" href="service-detail.html">Features</a></li>
-                  <li><a class="dropdown-item" href="careers.html">Internship Process</a></li>
-                  <li><a class="dropdown-item" href="contact-us.html">Teams</a></li>
-                  <li><a class="dropdown-item" href="faq.html">Faq</a></li>
-                  <li><a class="dropdown-item" href="team.html">Contact us</a></li>
-                  <li><a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
+                  <li><a class="dropdown-item" href="/pages/about">About Us</a></li>
+                  <li><a class="dropdown-item" href="/pages/service">Features</a></li>
+                  <li><a class="dropdown-item" href="/internships?category=featured%20internships">Internships</a></li>
+                  <li><a class="dropdown-item" href="/pages/profile">Profile</a></li>
+                  <li><a class="dropdown-item" href="/pages/team">Teams</a></li>
+                  <li><a class="dropdown-item" href="/pages/faq">Faq</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">Service</a>
+                  aria-expanded="false">Internships</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="service.html">Service</a></li>
-                  <li><a class="dropdown-item" href="service-detail.html">Service Single</a></li>
+                  <li><a class="dropdown-item" href="/internships?category=featured%20internships"> Featured Internships
+                    </a></li>
+                  <li><a class="dropdown-item" href="/internships?category=programming%20internships"> Programming
+                      Internships </a></li>
+                  <li><a class="dropdown-item" href="/internships?category=development%20internships"> Development
+                      Internships </a></li>
+                  <li><a class="dropdown-item" href="/internships?category=mobile%20app%20development"> Mobile app
+                      Development </a></li>
+                  <li><a class="dropdown-item" href="/internships?category=cybersecurty%20internships"> Cybersecurity
+                      Internships </a></li>
+                  <li><a class="dropdown-item" href="/internships?category=datascience%20and%20machine%20learning"> Data
+                      Science & ML </a></li>
+                  <li><a class="dropdown-item" href="/internships?category=cloud%20computing%20and%20devops"> Cloud
+                      Computing and DevOps </a></li>
+                  <li><a class="dropdown-item" href="/internships?category=ui%20ux%20design"> UI/UX Design </a></li>
+                  <li><a class="dropdown-item" href="/internships?category=game%20development"> Game Development </a>
+                  </li>
+                  <li><a class="dropdown-item" href="/internships?category=database%20internships"> Database Management
+                    </a></li>
+                  <li><a class="dropdown-item" href="/internships?category=digital%20marketing"> Digital Marketing </a>
+                  </li>
+                  <li><a class="dropdown-item" href="/internships?category=networking%20internships"> Networking </a>
+                  </li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">Case Studies</a>
+                  aria-expanded="false">Learn</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="case-studies.html">Case Studies</a></li>
-                  <li><a class="dropdown-item" href="case-studies-detail.html">Case Studies Single</a></li>
+                  <li><a class="dropdown-item" href="/pages/coming-soon">C/C++</a></li>
+                  <li><a class="dropdown-item" href="/pages/coming-soon">Java</a></li>
+                  <li><a class="dropdown-item" href="/pages/coming-soon">Python</a></li>
+                  <li><a class="dropdown-item" href="/pages/coming-soon">Android</a></li>
+                  <li><a class="dropdown-item" href="/pages/coming-soon">C# .NET</a></li>
+                  <li><a class="dropdown-item" href="/pages/coming-soon">Web Dev</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">Blog</a>
+                  aria-expanded="false">Project Portfolio</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="blog.html">Blog Standard</a></li>
-                  <li><a class="dropdown-item" href="blog-detail.html">Blog Single</a></li>
+                  <li><a class="dropdown-item" href="/portfolio?category=programming%20internships"> Programming </a>
+                  </li>
+                  <li><a class="dropdown-item active" href="/portfolio?category=development%20internships"> Development </a>
+                  </li>
+                  <li><a class="dropdown-item" href="/portfolio?category=mobile%20app%20development"> Mobile App Dev</a>
+                  </li>
+                  <li><a class="dropdown-item" href="/portfolio?category=datascience%20and%20machine%20learning"> Data
+                      Science & ML </a></li>
+                  <li><a class="dropdown-item" href="/portfolio?category=cloud%20computing%20and%20devops"> Cloud
+                      Computing and
+                      DevOps </a></li>
+                  <li><a class="dropdown-item" href="/portfolio?category=ui%20ux%20design"> UI/UX Design </a></li>
+                  <li><a class="dropdown-item" href="/portfolio?category=game%20development"> Game Development </a></li>
+                  <li><a class="dropdown-item" href="/portfolio?category=database%20internships"> Database Management
+                    </a></li>
+                  <li><a class="dropdown-item" href="/portfolio?category=digital%20marketing"> Digital Marketing </a>
+                  </li>
+                  <li><a class="dropdown-item" href="/portfolio?category=networking%20internships"> Networking </a></li>
                 </ul>
               </li>
-              <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="/pages/contact-us">Contact</a></li>
             </ul>
           </nav>
           <div class="bottom-info">
