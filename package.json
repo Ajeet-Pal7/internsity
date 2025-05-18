@@ -2,7 +2,7 @@
   "name": "internsity",
   "version": "1.0.0",
   "description": "Internsity a website helping students and freshers to get the experience and make their career of next level",
-  "main": "internsity.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },

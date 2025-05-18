@@ -6,6 +6,7 @@ const certificateSchema = new mongoose.Schema({
     studentName: { type: String, required: true },
     uderid: { type: String, required: true },
     URL: { type: String, required: true },
+    QRcode: { type: String, required: true },
     internshipId: { type: String, required: true },
     projectId: { type: [String], required: true }
 });
