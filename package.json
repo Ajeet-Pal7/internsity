@@ -4,7 +4,7 @@
   "description": "Internsity a website helping students and freshers to get the experience and make their career of next level",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "npm run app.js"
   },
   "author": "Ajeet Pal",
   "license": "ISC",
