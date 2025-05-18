@@ -19,7 +19,7 @@ async function applyForInternship(internship) {
             email:user.email,
             appylingFor:internship.id
         };
-        const response =await fetch(`http://localhost:3000/internship/apply`,{
+        const response =await fetch(`https://internsity.in/internship/apply`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -48,7 +48,7 @@ async function getInternships() {
         const category = param.get('category') || "Featured internships"
 
         try {
-            const response = await fetch(`http://localhost:3000/internships/data?category=${category}`);
+            const response = await fetch(`https://internsity.in/internships/data?category=${category}`);
 
             if (!response.ok) {
                 alert("Failed to get Internships");

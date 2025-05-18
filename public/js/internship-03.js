@@ -18,7 +18,7 @@ async function getInternships() {
         const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Nov", "Dec"];
 
         try {
-            const response = await fetch(`http://localhost:3000/internships/data?category=${category}`);
+            const response = await fetch(`https://internsity.in/internships/data?category=${category}`);
 
             if (!(await response).ok) {
                 alert("Failed to get Internships");
