@@ -195,7 +195,10 @@ exports.register = async (req, res) => {
 
             }
             try {
-                await transporter.sendMail(mailOptions);  // Use await
+                transporter.sendMail(mailOptions, (error, info) => {
+                    if (error) console.log(error);
+                    else console.log('Email sent: ' + info.response);
+                }); // Use await
                 res.status(201).json({
                     msg: "User registered successfully and we've sent you a verification mail",
                     user: { id: newUser._id, email: newUser.personalInfo.email },
