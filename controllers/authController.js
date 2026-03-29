@@ -148,7 +148,7 @@ exports.register = async (req, res) => {
             );
             const mailOptions = {
                 from: process.env.USER_EMAIL,
-                to: 'ajeetbca2022@gmail.com',
+                to: newUser.personalInfo.email,
                 subject: 'Internsity - Verify your Email',
                 html: `
                 <html>
