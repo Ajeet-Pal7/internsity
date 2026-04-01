@@ -28,3 +28,22 @@ exports.sendProfileWithFallback = async (res, PngFilePath, JpgFilePath, JpegFile
     });
 
 };
+
+
+async function sendMail() {
+  try {
+    let info = await transporter.sendMail({
+      from: '"INTERNSITY" <no-reply@internsity.in>',
+      to: "user@gmail.com",
+      subject: "Welcome to INTERNSITY 🚀",
+      html: `
+        <h2>Welcome 👋</h2>
+        <p>Your account is successfully created.</p>
+      `
+    });
+
+    console.log("Mail sent:", info.messageId);
+  } catch (err) {
+    console.error("Error:", err);
+  }
+}
