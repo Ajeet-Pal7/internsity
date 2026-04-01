@@ -3,12 +3,12 @@ require('dotenv').config();
 
 
 const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: process.env.SMTP_PORT,
-    secure: process.env.SMTP_SECURE,
+    host: process.env.BREVO_SMTP_HOST,
+    port: process.env.BREVO_SMTP_PORT,
+    secure: process.env.BREVO_SMTP_SECURE,
     auth: {
-        user: process.env.USER_EMAIL,
-        pass: process.env.EMAIL_PASS
+        user: process.env.BREVO_SMTP_USER,
+        pass: process.env.BREVO_SMTP_KEY
     }
 });
 module.exports = transporter;
